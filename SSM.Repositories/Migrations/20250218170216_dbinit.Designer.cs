@@ -12,8 +12,8 @@ using SSM.Repositories;
 namespace SSM.Repositories.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250217130028_AddedUser_Entity")]
-    partial class AddedUser_Entity
+    [Migration("20250218170216_dbinit")]
+    partial class dbinit
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

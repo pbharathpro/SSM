@@ -23,7 +23,7 @@ namespace SSM.Repositories.Implementation
         }
         public async Task<User> GetById(Guid userId)
         {
-            return await _dbContext.Users.FirstOrDefaultAsync(user=>user.Id==userId);
+            return await _dbContext.Users.FindAsync(userId);
         }
         public async Task<User> CreateUser(User user)
         {
@@ -33,11 +33,11 @@ namespace SSM.Repositories.Implementation
         }
         public async Task<bool> DeleteUserById(Guid userId)
         {
-            var user = await _dbContext.Users.FirstOrDefaultAsync(u => u.Id == userId);
+            var user = await _dbContext.Users.FindAsync(userId);
             if (user == null) return false;  
 
             _dbContext.Users.Remove(user);  
-            await _dbContext.SaveChangesAsync(); 
+            await _dbContext.SaveChangesAsync();
 
             return true;  
         }

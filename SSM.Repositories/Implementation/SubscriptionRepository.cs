@@ -25,7 +25,7 @@ namespace SSM.Repositories.Implementation
 
         public async Task<Subscription> GetSubscriptionById(Guid subscriptionId)
         {
-            return await _context.Subscriptions.FirstOrDefaultAsync(s => s.Id == subscriptionId);
+            return await _context.Subscriptions.FindAsync(subscriptionId);
         }
 
         public async Task<Subscription>AddSubscription(Subscription subscription)
